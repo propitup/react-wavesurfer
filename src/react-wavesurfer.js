@@ -71,11 +71,14 @@ class Wavesurfer extends Component {
         if (this.props.playing) {
           this._wavesurfer.pause();
         }
+
         // resize the waveform
         this._wavesurfer.empty();
         this._wavesurfer.drawBuffer();
+
         // restore previous position
         this._seekTo(this.props.pos);
+
         // restore playback
         if (this.props.playing) {
           this._wavesurfer.play();
